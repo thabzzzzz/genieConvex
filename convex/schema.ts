@@ -1,4 +1,4 @@
-import { defineSchema, defineTable } from "convex/schema";
+import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
@@ -11,6 +11,6 @@ export default defineSchema({
   items: defineTable({
     title: v.string(),
     description: v.string(),
-    userId: v.id("users"), 
+    userId: v.id("users"), // Reference to users table
   }).index("by_user", ["userId"]),
 });
