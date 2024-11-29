@@ -5,7 +5,7 @@ function Home({ userId }) {
   const items = useQuery(api.items.listItems, { userId });
 
   if (items === undefined) {
-    return <div>Loading...</div>;
+    return <div >Loading...</div>;
   }
 
   return (

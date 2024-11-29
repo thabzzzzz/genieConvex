@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import styles from "../assets/css/Auth.module.css";
 
 export function Login({ onLogin }) {
   const [email, setEmail] = useState("");

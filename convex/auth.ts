@@ -45,3 +45,17 @@ export const register = mutation({
     return { userId };
   },
 });
+export const getUser = query({
+    args: { userId: v.id("users") },
+    handler: async (ctx, { userId }) => {
+      const user = await ctx.db.get(userId);
+      if (!user) {
+        throw new Error("User not found");
+      }
+      return {
+        _id: user._id,
+        name: user.name,
+        email: user.email
+      };
+    },
+  });
